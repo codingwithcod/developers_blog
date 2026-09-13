@@ -1,24 +1,15 @@
-import dotenv from "dotenv";
-dotenv.config();
+/** Exporting all the environment variables. */
+// ---> Base urls
+export const APP_BASE_URL = process.env.APP_BASE_URL;
+export const NEXT_PUBLIC_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-/** ---> Exporting all environment variables. */
+// ---> Next auth secret
+export const AUTH_SECRET = process.env.AUTH_SECRET;
 
-export const PORT = process.env.PORT || 3331;
-export const HOST_NAME = process.env.HOST_NAME || "127.0.0.1";
+// ---> Google secret
+export const AUTH_GOOGLE_CLIENT_ID = process.env.AUTH_GOOGLE_CLIENT_ID;
+export const AUTH_GOOGLE_SECRET = process.env.AUTH_GOOGLE_SECRET;
 
-/** ---> Database credentials. */
-export const MONGO_DB_URL = process.env.MONGO_DB_URL || "mongodb://127.0.0.1:27017/developersblog";
-
-/** ---> jwt secrets. */
-export const JWT_SECRET = process.env.JWT_SECRET!;
-
-/** ---> SMTP Email credentials. */
-export const SMTP_HOST = process.env.SMTP_HOST;
-export const SMTP_PORT = process.env.SMTP_PORT;
-export const SMTP_USERNAME = process.env.SMTP_USERNAME;
-export const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
-
-/** ---> Cloudinary credentials. */
-export const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
-export const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
-export const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
+// ---> Github secret
+export const AUTH_GITHUB_CLIENT_ID = process.env.AUTH_GITHUB_CLIENT_ID;
+export const AUTH_GITHUB_SECRET = process.env.AUTH_GITHUB_SECRET;

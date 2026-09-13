@@ -1,20 +1,30 @@
-export interface IBlog {
-  _id: string;
+import { Document, ObjectId } from "mongoose";
+
+// @ts-expect-error :  pass build
+export interface IBlog extends Document {
+  _id: ObjectId;
   user: {
-    _id: string;
+    _id: ObjectId;
     username: string;
-    firstName: string;
-    lastName: string;
-    profilePic: string;
+    createdAt: string;
+    updatedAt: string;
+    userProfile?: {
+      _id: string;
+      user: string;
+      firstName: string;
+      lastName: string;
+      profilePic: string;
+      isDeleted: boolean;
+      createdAt: string;
+      updatedAt: string;
+    };
   };
   title: string;
   slug: string;
   thumbnail: string;
-  reads: number;
-  isReadLater?: boolean;
-  status: TBlogStatus;
-  createdAt: Date;
-  updatedAt: Date;
+  status: string;
+  reads: string[];
+  isDeleted: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
-
-export type TBlogStatus = "published" | "draft";
