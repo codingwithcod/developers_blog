@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "name": "developers_blog",
+  "version": "1.0.0",
+  "description": "Developers Blog - Full stack monorepo (Next.js + Express) for Vercel deployment"
+}

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "framework": null,
+  "installCommand": "cd frontend && yarn install && cd ../backend && yarn install",
+  "buildCommand": "cd frontend && yarn build && cd ../backend && yarn build",
+  "outputDirectory": "backend/.next",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "frontend/dist/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/v1/(.*)",
+      "destination": "/api/index"
+    }
+  ]
+}
