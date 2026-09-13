@@ -1,18 +1,26 @@
 {
   "version": 2,
-  "framework": null,
-  "installCommand": "cd backend && yarn install && cd ../frontend && yarn install",
-  "buildCommand": "cd backend && yarn build && cd ../frontend && yarn build",
-  "outputDirectory": "frontend/.next",
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "backend/dist/**"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/v1/(.*)",
-      "destination": "/api/index"
+      "src": "frontend/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["backend/dist/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/v1/(.*)",
+      "dest": "/api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
     }
   ]
 }
